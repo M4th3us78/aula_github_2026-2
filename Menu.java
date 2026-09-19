@@ -19,6 +19,7 @@ public class Menu {
 
 	public int getSelection() {
 		int op = 0;
+		Scanner s = new Scanner(System.in);
 		while (op==0){
 			System.out.println(title+"\n");
 			int i=1;
@@ -27,7 +28,6 @@ public class Menu {
 			}
 
 			System.out.println("Informe a opcao desejada. ");
-			Scanner s = new Scanner(System.in);
 			String str = s.nextLine();
 			try {
 				op = Integer.parseInt(str);
@@ -35,7 +35,7 @@ public class Menu {
 			catch (NumberFormatException e) {
 				op =0;
 			}
-			if (op>=i){
+			if (op>=i || op<=0){
 				System.out.println("Opcao errada!");
 				op=0;
 			}
