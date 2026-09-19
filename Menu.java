@@ -44,15 +44,24 @@ public class Menu {
 
 			System.out.println("Informe a opcao desejada. ");
 			String str = s.nextLine();
-			try {
-				op = Integer.parseInt(str);
-			}
-			catch (NumberFormatException e) {
-				op =0;
-			}
-			if (op>=i || op<=0){
-				System.out.println("Opcao errada!");
-				op=0;
+			
+			if (str.trim().isEmpty()) {
+				System.out.println("Entrada invalida: informe um numero.");
+				op = 0;
+			} else {
+				try {
+					op = Integer.parseInt(str);
+					
+					// Critério de aceitação: Entrada numérica fora do intervalo
+					if (op <= 0 || op >= i) { 
+						System.out.println("Opcao errada!");
+						op = 0;
+					}
+				} catch (NumberFormatException e) {
+					// Critério de aceitação: Entrada não numérica
+					System.out.println("Entrada invalida: informe um numero.");
+					op = 0;
+				}
 			}
 
 		}
