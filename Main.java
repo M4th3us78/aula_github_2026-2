@@ -10,12 +10,11 @@ public class Main {
     while(true){
       int opcaoSelecionada = mainMenu.getSelection();
       
+      System.out.println("\n>>> A opção " + mainMenu.getSelectionOption(opcaoSelecionada) + " foi selecionada\n");
+
       if(opcaoSelecionada == options.size()){
         break;
       }
-
-      System.out.println(opcaoSelecionada + " foi selecionada");
-
     }
 		System.out.println("Fim");
 	}
