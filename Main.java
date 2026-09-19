@@ -14,7 +14,7 @@ public class Main {
         break;
       }
 
-      System.out.println("\n>>> A opção " + opcaoSelecionada + " foi selecionada\n");
+      System.out.println(opcaoSelecionada + " foi selecionada");
 
     }
 		System.out.println("Fim");
