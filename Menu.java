@@ -43,4 +43,12 @@ public class Menu {
 		}
 		return op;
 	}
+
+	public String getSelectionOption(int selection) {
+		if (selection > 0 && selection <= options.size()) {
+			return options.get(selection - 1);
+		}
+		return null;
+
+	}
 }
