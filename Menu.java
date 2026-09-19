@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class Menu {
 	private String title;
 	private List<String> options;
+	private final Scanner scanner;
 
 	public Menu(List<String> options) {
-		//delega a função de nome generico ao construtor que faz a checagem
     this(null,options);
 	}
 
@@ -29,6 +29,7 @@ public class Menu {
     }
 
 		this.options = options;
+		this.scanner = new Scanner(System.in);
 	}
 
 	public int getSelection() {
