@@ -8,12 +8,26 @@ public class Menu {
 	private List<String> options;
 
 	public Menu(List<String> options) {
-		this.title = "Menu";
-		this.options = options;
+		//delega a função de nome generico ao construtor que faz a checagem
+    this(null,options);
 	}
 
 	public Menu(String title, List<String> options) {
-		this.title = title;
+		
+    if(options == null){
+      throw new IllegalArgumentException("A lista de opções não pode ser nula.");
+    } 
+
+    if(options.isEmpty()){
+      throw new IllegalArgumentException("A lista de opções não pode ser vazia.");
+    }
+
+    if(title == null || title.trim().isEmpty()){
+      this.title = "Menu";
+    }else{
+      this.title = title;
+    }
+
 		this.options = options;
 	}
 
